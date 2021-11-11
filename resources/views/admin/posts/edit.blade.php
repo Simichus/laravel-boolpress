@@ -24,6 +24,14 @@
           <textarea class="form-control" id="content" name="content" rows="3">{{$post->content}}</textarea>
         </div>
       </div>
+      <fieldset class="d-flex align-items-center justify-content-start">
+        @foreach($tags as $tag)
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="tag-{{$tag->id}}" value="{{$tag->id}}" name="tags[]">
+          <label class="custom-control-label" for="tag-{{$tag->id}}">{{$tag->name}}</label>
+        </div>
+        @endforeach
+      </fieldset>
       <button type="submit" class="btn btn-success">Salva</button>
     </form>
 </section>
